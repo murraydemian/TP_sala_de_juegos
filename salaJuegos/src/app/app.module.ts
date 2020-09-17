@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
 
 import { HomeComponent } from './component/home/home.component';
 import { AcercaDeComponent } from './component/acerca-de/acerca-de.component';
@@ -21,13 +23,16 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     AcercaDeComponent,
     JuegosComponent,
     NotFoundComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonToggleModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

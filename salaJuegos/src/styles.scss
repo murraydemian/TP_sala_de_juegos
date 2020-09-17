@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-image: './assets/cat_icon.png';}
+body { margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./assets/fondo_espirales_chico.png');
+    background-size: cover;
+}
+
+p {margin: 3px}

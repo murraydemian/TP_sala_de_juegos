@@ -1,9 +1,13 @@
-<mat-toolbar color="">
+<mat-toolbar class="main-nav-bar">
   <img src="../assets/cat_icon.png" class="nav-bar-image" alt="">
-  <span>Sala de Juegos</span>
-  <a class="nav-bar-link" routerLink="/" routerLinkActive="active">Home</a>
-  <a class="nav-bar-link" routerLink="/juegos" routerLinkActive="active">Juegos</a>
-  <a class="nav-bar-link" routerLink="/acerca-de" routerLinkActive="active">Acerca de</a>
-  <a class="nav-bar-link" routerLink="/askjfgakf" routerLinkActive="active">Ruta mala :(</a>
+  <span class="nav-bar-title">Sala de Juegos</span>
+  <mat-button-toggle-group class="nav-button-group">
+    
+    <mat-button-toggle class="nav-bar-link" routerLink="/" routerLinkActive="active">Home</mat-button-toggle>
+    <mat-button-toggle class="nav-bar-link" routerLink="/juegos" routerLinkActive="active">Juegos</mat-button-toggle>
+    <mat-button-toggle class="nav-bar-link" routerLink="/acerca-de" routerLinkActive="active">Acerca de</mat-button-toggle>
+    <mat-button-toggle class="nav-bar-link" routerLink="/askjfgakf" routerLinkActive="active">Ruta mala :(</mat-button-toggle>
+  </mat-button-toggle-group>
 </mat-toolbar>
+<div class="home-body"></div>
 <router-outlet></router-outlet>

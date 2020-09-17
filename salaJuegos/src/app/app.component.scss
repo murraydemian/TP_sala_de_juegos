@@ -1,8 +1,17 @@
 .nav-bar-link{
     margin: 5px;
+    background-color: rgba(255, 255, 255, 0);
+}
+.main-nav-bar{
+    background-color: rgba(255, 255, 255, 0.9);
 }
 .nav-bar-image{
     height: 40px;
     width: 40px;
     margin-right: 10px;
 }
+.nav-button-group{
+    left: 50vh;
+    border: none;
+}
+

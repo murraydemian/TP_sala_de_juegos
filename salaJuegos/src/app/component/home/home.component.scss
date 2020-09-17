@@ -1,0 +1,12 @@
+.home-card{
+    height: 400px;
+    width: 400px;
+    align-self: center;
+    justify-self: center;
+    background: url('../../../assets/jome.png');
+    background-size: cover;
+    background-color: rgba($color: #FFFFFF, $alpha: 0.8);
+}
+body{
+    align-items: center!important;
+}
