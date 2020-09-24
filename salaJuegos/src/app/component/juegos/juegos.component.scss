@@ -5,6 +5,32 @@
     justify-self: center;
     background: url('../../../assets/juegos.png');
     background-size: cover;
-    background-color: rgba($color: #FFFFFF, $alpha: 0.8);
+    background-color: rgba($color: #FFFFFF, $alpha: 0.9);
     margin: 100px  auto;
+}
+.side-button{
+    display: table-cell;
+}
+.juegos-sidenav{
+    width: 150px;
+    //display: table;
+    background-image: none!important;
+    background-color: transparent!important;
+    background: rgba($color: #fff, $alpha: 0.9)!important;
+    border: 0;
+}
+.juegos-content{
+    background-image: none!important;
+    background-color: transparent !important;
+    background: rgba($color: #fff, $alpha: 0)!important;
+}
+.drawer-cont{
+    background-image: none!important;
+    background-color: transparent !important;
+    background: rgba($color: #fff, $alpha: 0)!important;
+}
+.sidenav-cont{
+    background-image: none!important;
+    background-color: transparent !important;
+    background: rgba($color: #fff, $alpha: 0)!important;
 }
