@@ -69,8 +69,8 @@ export class AnagramaComponent implements OnInit {
   }
   checkAnswer() : boolean{
     let ok = false;
-    console.log("palabra", this.palabra);
-    console.log("respuesta", this.solucion);
+    //console.log("palabra", this.palabra);
+    //console.log("respuesta", this.solucion);
     if(this.solucion.length == this.palabra.length){
       ok = true;
       for(let i = 0; i < this.palabra.length; i++){

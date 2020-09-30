@@ -28,7 +28,8 @@ import { SideBarComponent } from './component/organisms/side-bar/side-bar.compon
 import { JuegosButtonComponent } from './component/molecules/juegos-button/juegos-button.component';
 import { AnagramaComponent } from './component/juegos/anagrama/anagrama.component';
 import { LetterBoxComponent } from './component/atom/letter-box/letter-box.component';
-import { DragDropModule } from '@angular/cdk/drag-drop'; 
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { PiedraPapelTijeraComponent } from './component/juegos/piedra-papel-tijera/piedra-papel-tijera.component'; 
 
 
 
@@ -50,6 +51,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     JuegosButtonComponent,
     AnagramaComponent,
     LetterBoxComponent,
+    PiedraPapelTijeraComponent,
    
     
   ],

@@ -1,3 +1,4 @@
+import { HtmlTagDefinition } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JuegosComponent implements OnInit {
 
+  display : string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+  seleccionaJuego(juego : string){
+    this.display = juego;
   }
 
 }

@@ -1,0 +1,39 @@
+<div class="juego-container">
+    <div class="opciones-usuario-container">
+        <div class="opcion-image-container" (click)="opcionElegida('piedra')">
+            <img class="opcion-image" src="../../../../assets/piedra.png" alt="piedra">
+        </div>
+        <div class="opcion-image-container" (click)="opcionElegida('papel')">
+            <img class="opcion-image" src="../../../../assets/papel.png" alt="papel">
+        </div>
+        <div class="opcion-image-container" (click)="opcionElegida('tijera')">
+            <img class="opcion-image" src="../../../../assets/tijera.png" alt="tijera">
+        </div>
+    </div>
+    <div class="seleccion-container">
+        <div class="seleccion-usuario">
+            <img class="opcion-image" src="{{seleccionUsuario.ruta}}" alt="{{seleccionUsuario.alt}}">
+        </div>
+    </div>
+    <div class="seleccion-oponente-container">
+        <div class="seleccion-oponente">
+            <img class="opcion-image" src="{{seleccionOponente.ruta}}" alt="{{seleccionOponente.alt}}">
+        </div>
+    </div>
+    <div class="opciones-oponente-container" (click)="opcionElegida('asd')">
+        <div class="opcion-image-container">
+            <img class="opcion-image" src="../../../../assets/piedra.png" alt="piedra">
+        </div>
+        <div class="opcion-image-container" (click)="opcionElegida('asd')">
+            <img class="opcion-image" src="../../../../assets/papel.png" alt="papel">
+        </div>
+        <div class="opcion-image-container" (click)="opcionElegida('asd')">
+            <img class="opcion-image" src="../../../../assets/tijera.png" alt="tijera">
+        </div>
+    </div>
+</div>
+<div class="resultado-container">
+    <p class="mensaje-label">        
+        {{mensaje}}
+    </p>
+</div>

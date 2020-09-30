@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SideButtonComponent implements OnInit {
 
   @Input() label : string;
+  @Input() resuelve : string;
 
   constructor() { }
 

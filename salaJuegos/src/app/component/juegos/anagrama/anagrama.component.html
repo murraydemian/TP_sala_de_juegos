@@ -19,11 +19,9 @@
     [cdkDropListData]="palabraDesordenada" 
     [cdkDropListConnectedTo]=[respuesta]
     class="example-list"
-    (cdkDropListDropped)="drop($event)"
-    >
+    (cdkDropListDropped)="drop($event)">
         <div class="letter-box" *ngFor="let char of this.palabraDesordenada" cdkDrag>{{char}}</div>
-    </div>
-    
+    </div>    
 </div>
 
 <div class="example-container">
@@ -38,7 +36,7 @@
     >
         <div class="letter-box" *ngFor="let char of this.solucion" cdkDrag>{{char}}</div>
     </div>
-    <div class="letter-box">
+    <div class="letter-box" style="cursor: default">
         <mat-icon>{{this.icon}}</mat-icon>
     </div>
 </div>
