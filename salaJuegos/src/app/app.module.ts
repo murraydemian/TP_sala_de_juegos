@@ -14,12 +14,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 
-import { HomeComponent } from './component/home/home.component';
-import { AcercaDeComponent } from './component/acerca-de/acerca-de.component';
-import { JuegosComponent } from './component/juegos/juegos.component';
-import { NotFoundComponent } from './component/not-found/not-found.component';
-import { MainNavComponent } from './main-nav/main-nav.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
+import { JuegosComponent } from './pages/juegos/juegos.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { RouteButtonComponent } from './component/atom/route-button/route-button.component';
+import { TitleComponent } from './component/atom/title/title.component';
+import { NavButtonGroupComponent } from './component/molecules/nav-button-group/nav-button-group.component';
+import { NavBarComponent } from './component/organisms/nav-bar/nav-bar.component';
+import { SideButtonComponent } from './component/atom/side-button/side-button.component';
+import { SideBarComponent } from './component/organisms/side-bar/side-bar.component';
+import { JuegosButtonComponent } from './component/molecules/juegos-button/juegos-button.component';
+import { AnagramaComponent } from './component/juegos/anagrama/anagrama.component';
+import { LetterBoxComponent } from './component/atom/letter-box/letter-box.component';
+import { DragDropModule } from '@angular/cdk/drag-drop'; 
 
 
 
@@ -32,7 +41,16 @@ import { LayoutModule } from '@angular/cdk/layout';
     AcercaDeComponent,
     JuegosComponent,
     NotFoundComponent,
-    MainNavComponent
+    RouteButtonComponent,
+    TitleComponent,
+    NavButtonGroupComponent,
+    NavBarComponent,
+    SideButtonComponent,
+    SideBarComponent,
+    JuegosButtonComponent,
+    AnagramaComponent,
+    LetterBoxComponent,
+   
     
   ],
   imports: [
@@ -47,7 +65,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     LayoutModule,
     MatButtonModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

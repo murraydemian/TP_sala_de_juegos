@@ -1,0 +1,16 @@
+.nav-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media (max-width: 800px){
+    .nav-buttons{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: minmax(80px, auto);
+    }
+}
+@media (max-width: 610px){
+    .nav-buttons{
+        grid-template-columns: minmax(150px auto);
+        //grid-template-rows: minmax(80px, auto);
+    }
+}

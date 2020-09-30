@@ -1,0 +1,45 @@
+<!--div class="juego-grid">
+    <div class="word-grid-d" style="display: grid; grid-template-columns: {{this.frs}} ;">
+        <mat-grid-title 
+            class="letter-box" 
+            *ngFor="let char of this.palabra" 
+            cdkDrag
+            [cdkDragData]="char"
+        >{{char}}</mat-grid-title>
+    </div>
+    <div class="word-grid-o" style="display: grid; grid-template-columns: {{this.frs}} ;">
+        <mat-grid-title class="letter-slot" *ngFor="let char of this.palabra" cdkDrag> </mat-grid-title>
+    </div>
+</div-->
+<div class="example-container">
+    <h2>Letras</h2>
+    <div cdkDropList 
+    #desordenada="cdkDropList"
+    cdkDropListOrientation="horizontal"
+    [cdkDropListData]="palabraDesordenada" 
+    [cdkDropListConnectedTo]=[respuesta]
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+    >
+        <div class="letter-box" *ngFor="let char of this.palabraDesordenada" cdkDrag>{{char}}</div>
+    </div>
+    
+</div>
+
+<div class="example-container">
+    <h2>Respuesta</h2>
+    <div cdkDropList 
+    #respuesta="cdkDropList"
+    cdkDropListOrientation="horizontal"
+    [cdkDropListData]="solucion" 
+    [cdkDropListConnectedTo]=[desordenada]
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+    >
+        <div class="letter-box" *ngFor="let char of this.solucion" cdkDrag>{{char}}</div>
+    </div>
+    <div class="letter-box">
+        <mat-icon>{{this.icon}}</mat-icon>
+    </div>
+</div>
+

@@ -1,12 +1,13 @@
 .juegos-card{
-    height: 400px;
-    width: 400px;
+    height: 70vh;
+    width: 80vw;
     align-self: center;
     justify-self: center;
-    background: url('../../../assets/juegos.png');
+    background: url('../../../assets/juegos.png') no-repeat center;
     background-size: cover;
-    background-color: rgba($color: #FFFFFF, $alpha: 0.9);
-    margin: 100px  auto;
+    background-color: rgba($color: #FFFFFF, $alpha: 0.95);
+    margin: 5%;
+    //margin: 100px  auto;
 }
 .side-button{
     display: table-cell;
@@ -16,7 +17,7 @@
     //display: table;
     background-image: none!important;
     background-color: transparent!important;
-    background: rgba($color: #fff, $alpha: 0.9)!important;
+    background: rgba($color: #fff, $alpha: 1)!important;
     border: 0;
 }
 .juegos-content{
