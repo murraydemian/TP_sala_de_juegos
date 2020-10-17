@@ -11,33 +11,41 @@
         <mat-grid-title class="letter-slot" *ngFor="let char of this.palabra" cdkDrag> </mat-grid-title>
     </div>
 </div-->
-<div class="example-container">
-    <h2>Letras</h2>
-    <div cdkDropList 
-    #desordenada="cdkDropList"
-    cdkDropListOrientation="horizontal"
-    [cdkDropListData]="palabraDesordenada" 
-    [cdkDropListConnectedTo]=[respuesta]
-    class="example-list"
-    (cdkDropListDropped)="drop($event)">
-        <div class="letter-box" *ngFor="let char of this.palabraDesordenada" cdkDrag>{{char}}</div>
-    </div>    
-</div>
+<div class="page-container">
 
-<div class="example-container">
-    <h2>Respuesta</h2>
-    <div cdkDropList 
-    #respuesta="cdkDropList"
-    cdkDropListOrientation="horizontal"
-    [cdkDropListData]="solucion" 
-    [cdkDropListConnectedTo]=[desordenada]
-    class="example-list"
-    (cdkDropListDropped)="drop($event)"
-    >
-        <div class="letter-box" *ngFor="let char of this.solucion" cdkDrag>{{char}}</div>
+    <div class="messy-container">
+        <h2>Letras</h2>
+        <div cdkDropList 
+            #desordenada="cdkDropList"
+            cdkDropListOrientation="horizontal"
+            [cdkDropListData]="palabraDesordenada" 
+            [cdkDropListConnectedTo]=[respuesta]
+            [style.width] = 'boxWidth'
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="letter-box" *ngFor="let char of this.palabraDesordenada" cdkDrag>{{char}}</div>
+        </div>    
     </div>
-    <div class="letter-box" style="cursor: default">
-        <mat-icon>{{this.icon}}</mat-icon>
-    </div>
-</div>
 
+    <div class="ordered-container">
+        <h2 class="section-title">Respuesta</h2>
+        <div cdkDropList 
+            #respuesta="cdkDropList"
+            cdkDropListOrientation="horizontal"
+            [cdkDropListData]="solucion" 
+            [cdkDropListConnectedTo]=[desordenada]
+            [style.width] = 'boxWidth'
+            class="solucion-list"
+            (cdkDropListDropped)="drop($event)"
+        >
+            <div class="letter-box" *ngFor="let char of this.solucion" cdkDrag>{{char}}</div>
+        </div>
+        <div class=" letter-box status-box" [style.color]="this.icon.color">
+            <mat-icon>{{this.icon.name}}</mat-icon>
+        </div>
+        <div class="letter-box redo-box" (click)="redo()">
+            <mat-icon>loop</mat-icon>
+        </div>
+    </div>
+
+</div>

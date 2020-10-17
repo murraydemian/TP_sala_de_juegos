@@ -1,39 +1,68 @@
-<div class="juego-container">
-    <div class="opciones-usuario-container">
-        <div class="opcion-image-container" (click)="opcionElegida('piedra')">
-            <img class="opcion-image" src="../../../../assets/piedra.png" alt="piedra">
+<!--div class="page-positioner">
+    <div class="juego-container">
+        <div class="opciones-usuario-container">
+            <div class="opcion-image-container" (click)="opcionElegida('piedra')">
+                <img class="opcion-image" src="../../../../assets/juegos-ppt-assets-piedra.svg" alt="piedra">
+            </div>
+            <div class="opcion-image-container" (click)="opcionElegida('papel')">
+                <img class="opcion-image" src="../../../../assets/juegos-ppt-assets-papel.svg" alt="papel">
+            </div>
+            <div class="opcion-image-container" (click)="opcionElegida('tijera')">
+                <img class="opcion-image" src="../../../../assets/juegos-ppt-assets-tijera.svg" alt="tijera">
+            </div>
         </div>
-        <div class="opcion-image-container" (click)="opcionElegida('papel')">
-            <img class="opcion-image" src="../../../../assets/papel.png" alt="papel">
+        <div class="seleccion-container">
+            <div class="seleccion-usuario">
+                <img class="opcion-image" src="{{seleccionUsuario.ruta}}" alt="{{seleccionUsuario.alt}}">
+            </div>
         </div>
-        <div class="opcion-image-container" (click)="opcionElegida('tijera')">
-            <img class="opcion-image" src="../../../../assets/tijera.png" alt="tijera">
+        <div class="seleccion-oponente-container">
+            <div class="seleccion-oponente">
+                <img class="opcion-image" src="{{seleccionOponente.ruta}}" alt="{{seleccionOponente.alt}}">
+            </div>
+        </div>
+        <div class="opciones-oponente-container" (click)="opcionElegida('asd')">
+            <div class="opcion-image-container">
+                <img class="opcion-image" src="../../../../assets/piedra.png" alt="piedra">
+            </div>
+            <div class="opcion-image-container" (click)="opcionElegida('asd')">
+                <img class="opcion-image" src="../../../../assets/papel.png" alt="papel">
+            </div>
+            <div class="opcion-image-container" (click)="opcionElegida('asd')">
+                <img class="opcion-image" src="../../../../assets/tijera.png" alt="tijera">
+            </div>
+        </div>
+        <div class="resultado-container">
+            <p class="mensaje-label">        
+                {{mensaje}}
+            </p>
         </div>
     </div>
-    <div class="seleccion-container">
-        <div class="seleccion-usuario">
-            <img class="opcion-image" src="{{seleccionUsuario.ruta}}" alt="{{seleccionUsuario.alt}}">
-        </div>
+</div-->
+<div class="page-grid">
+    <div class="opponent-selection-container" (click)="opcionElegida('asd')">
+        <mat-card class="option-card">
+            <img class="option-image" src="{{seleccionOponente.ruta}}" alt="{{seleccionOponente.alt}}">
+        </mat-card>
     </div>
-    <div class="seleccion-oponente-container">
-        <div class="seleccion-oponente">
-            <img class="opcion-image" src="{{seleccionOponente.ruta}}" alt="{{seleccionOponente.alt}}">
-        </div>
+    <div class="user-selection-container" (click)="opcionElegida('asd')">
+        <mat-card class="option-card">
+            <img class="option-image" src="{{seleccionUsuario.ruta}}" alt="{{seleccionUsuario.alt}}">
+        </mat-card>
     </div>
-    <div class="opciones-oponente-container" (click)="opcionElegida('asd')">
-        <div class="opcion-image-container">
-            <img class="opcion-image" src="../../../../assets/piedra.png" alt="piedra">
-        </div>
-        <div class="opcion-image-container" (click)="opcionElegida('asd')">
-            <img class="opcion-image" src="../../../../assets/papel.png" alt="papel">
-        </div>
-        <div class="opcion-image-container" (click)="opcionElegida('asd')">
-            <img class="opcion-image" src="../../../../assets/tijera.png" alt="tijera">
-        </div>
+    <div class="user-options-container">
+        <mat-card class="option-card option1" (click)="opcionElegida('piedra')">
+            <img class="option-image" src="../../../../assets/juegos-ppt-assets-piedra.svg" alt="piedra">
+        </mat-card>
+        <mat-card class="option-card option2" (click)="opcionElegida('papel')">
+            <img class="option-image" src="../../../../assets/juegos-ppt-assets-papel.svg" alt="papel">
+        </mat-card>
+        <mat-card class="option-card option3" (click)="opcionElegida('tijera')">
+            <img class="option-image" src="../../../../assets/juegos-ppt-assets-tijera.svg" alt="tijera">
+        </mat-card>
+    </div>
+    <div class="message-container">
+        <mat-card class="message-card">{{mensaje}}</mat-card>
     </div>
 </div>
-<div class="resultado-container">
-    <p class="mensaje-label">        
-        {{mensaje}}
-    </p>
-</div>
+

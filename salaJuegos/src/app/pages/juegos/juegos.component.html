@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-cont">
+<!--mat-sidenav-container class="sidenav-cont">
     <mat-drawer-container class="drawer-cont">
         <mat-drawer mode="side" opened class="juegos-sidenav">
             <app-side-button (click)="seleccionaJuego('anagrama')" label="Anagrama"></app-side-button>
@@ -20,4 +20,17 @@
             </mat-card>
         </mat-drawer-content>
     </mat-drawer-container>
-</mat-sidenav-container>
+</mat-sidenav-container-->
+
+<nav mat-tab-nav-bar backgroundColor="light">
+    <a mat-tab-link *ngFor="let link of games"
+        routerLink="{{link.route}}"
+        (click)="activeLink = link.route"
+        [active]="activeLink == link.route">
+        <label class="link-text">
+            {{link.alias}}
+        </label>
+    </a>
+  </nav>
+  <router-outlet style="display: grid;"></router-outlet>
+

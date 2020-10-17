@@ -8,18 +8,25 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class AnagramaComponent implements OnInit {
 
-  listaPalabras : Array<string> = ['HOLA', 'CHAU', 'PERRO', 'GATO', 'CONEJO'];
+  listaPalabras : Array<string> = ['HOLA', 'CHAU', 'PERRO', 'GATO', 'CONEJO', 'SALUDO', 'BICICLETA', 'AUTO'];
   frs : string = '';
   palabra : Array<string> = [];
   palabraDesordenada : Array<string> = [];
   solucion : Array<string> = [];
-  icon = 'clear';
+  icon : any = {};
+  letterWidth = 62;
+  boxWidth : string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+    this.solucion = [];
+    this.icon.name = 'clear';
+    this.icon.color = 'red';
     this.palabra = this.getCharList(this.listaPalabras[this.getRandomInt(this.listaPalabras.length)]);
     this.frs = this.prepareFrs();
     this.palabraDesordenada = this.shuffle(this.palabra);
+    this.boxWidth = (this.letterWidth * this.palabra.length) + 'px';
   }
   getRandomInt(max : number) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -49,7 +56,13 @@ export class AnagramaComponent implements OnInit {
                         event.previousIndex,
                         event.currentIndex);
     }
-    this.icon = this.checkAnswer() ? 'check' : 'clear';
+    if(this.checkAnswer()){
+      this.icon.name = 'check';
+      this.icon.color = 'green';
+    }else{
+      this.icon.name = 'clear';
+      this.icon.color = 'red';
+    }
   }
   shuffle(a : Array<string>) {
     let b : Array<string> = [];
@@ -69,8 +82,6 @@ export class AnagramaComponent implements OnInit {
   }
   checkAnswer() : boolean{
     let ok = false;
-    //console.log("palabra", this.palabra);
-    //console.log("respuesta", this.solucion);
     if(this.solucion.length == this.palabra.length){
       ok = true;
       for(let i = 0; i < this.palabra.length; i++){
@@ -81,5 +92,8 @@ export class AnagramaComponent implements OnInit {
       }
     }
     return ok;
+  }
+  redo(){
+    this.ngOnInit();
   }
 }

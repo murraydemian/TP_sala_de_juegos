@@ -4,6 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 import { JuegosComponent } from './pages/juegos/juegos.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AnagramaComponent } from './component/juegos/anagrama/anagrama.component';
+import { PiedraPapelTijeraComponent } from './component/juegos/piedra-papel-tijera/piedra-papel-tijera.component';
 
 const routes: Routes = [
   {
@@ -16,7 +18,13 @@ const routes: Routes = [
   },
   {
     path:'juegos',
-    component: JuegosComponent
+    component: JuegosComponent,
+    children: [
+      {path:'anagrama', component: AnagramaComponent},
+      {path:'piedrapapeltijera', component: PiedraPapelTijeraComponent},
+      {path:'tateti', component: AnagramaComponent},
+      {path:'adivina', component: AnagramaComponent},
+    ],
   },
   {
     path:'**',

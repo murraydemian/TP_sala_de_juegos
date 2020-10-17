@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'salaJuegos';
+
+  links : Array<any> = [
+    {route:"/", alias:"Home"},
+    {route:"/juegos", alias:"Juegos"},
+    {route:"/acerca-de", alias:"Acerca de"}
+  ];
+  activeLink = this.links[0].route;
+
 }

@@ -8,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JuegosComponent implements OnInit {
 
+  games : Array<any> = [
+    {alias:"Anagrama", route:"anagrama"},
+    {alias:"Piedra Papel Tijera", route:"piedrapapeltijera"},
+    {alias:"TaTeTi", route:"tateti"},
+    {alias:"Adivina el Numero", route:"adivina"}
+  ];
   display : string = '';
 
   constructor() { }

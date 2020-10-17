@@ -1,10 +1,39 @@
 .acerca-de-card{
     height: 400px;
-    width: 400px;
+    width: 450px;
     align-self: center;
     justify-self: center;
-    background: url('../../../assets/clipboard.png');
+    //background: url('../../../assets/clipboard.png');
     background-size: cover;
     background-color: rgba($color: #FFFFFF, $alpha: 0.8);
     margin: 100px  auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+.foto-container{
+    grid-row: span 5;
+}
+.foto{
+    height: 400px;
+}
+.info-item-container{
+    grid-row: span 1;
+    grid-column: span 1;
+    display: grid;
+    margin: 10px;
+    background: rgba($color: #673AB7, $alpha: 1);
+    border-radius: 10px;
+    border-left: rgba($color: #4527A0, $alpha: 1) solid 5px;
+    border-bottom: rgba($color: #4527A0, $alpha: 1) solid 5px;
+}
+.info-item{
+    align-self: center;
+    justify-self: center;
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }

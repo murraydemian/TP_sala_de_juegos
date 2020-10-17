@@ -13,6 +13,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs'; 
 
 import { HomeComponent } from './pages/home/home.component';
 import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
@@ -68,7 +69,8 @@ import { PiedraPapelTijeraComponent } from './component/juegos/piedra-papel-tije
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    DragDropModule
+    DragDropModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
