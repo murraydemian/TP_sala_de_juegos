@@ -1,8 +1,8 @@
 <!--app-nav-bar></app-nav-bar-->
 
-<nav mat-tab-nav-bar backgroundColor="primary">
+<nav mat-tab-nav-bar backgroundColor="primary" class="nav-bar">
     <a mat-tab-link routerLink="/">
-        <img src="../assets/cat_icon.png" alt="mouse icon" style="height: 45px; width: 45px; margin-right: 10px;">
+        <img src="../assets/cat_icon.png" alt="cat icon" style="height: 45px; width: 45px; margin-right: 10px;">
         <label class="link-text"> Sala de Juegos</label>
     </a>
     <a mat-tab-link *ngFor="let link of links"
@@ -13,5 +13,7 @@
             {{link.alias}}
         </label>
     </a>
+    <button mat-stroked-button class="login-button link-text" routerLink="login">Iniciar Sesión</button>
+    <button mat-stroked-button class="login-button link-text" routerLink="registro">Registrarse</button>
 </nav>
 <router-outlet></router-outlet>

@@ -13,12 +13,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import {MatTabsModule} from '@angular/material/tabs'; 
+import { MatTabsModule } from '@angular/material/tabs'; 
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
-import { HomeComponent } from './pages/home/home.component';
-import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
-import { JuegosComponent } from './pages/juegos/juegos.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RouteButtonComponent } from './component/atom/route-button/route-button.component';
 import { TitleComponent } from './component/atom/title/title.component';
@@ -29,8 +28,18 @@ import { SideBarComponent } from './component/organisms/side-bar/side-bar.compon
 import { JuegosButtonComponent } from './component/molecules/juegos-button/juegos-button.component';
 import { AnagramaComponent } from './component/juegos/anagrama/anagrama.component';
 import { LetterBoxComponent } from './component/atom/letter-box/letter-box.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { PiedraPapelTijeraComponent } from './component/juegos/piedra-papel-tijera/piedra-papel-tijera.component'; 
+
+import { HomeComponent } from './pages/home/home.component';
+import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
+import { JuegosComponent } from './pages/juegos/juegos.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { PiedraPapelTijeraComponent } from './component/juegos/piedra-papel-tijera/piedra-papel-tijera.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegistroComponent } from './pages/registro/registro.component'; 
+
+import { AngularFireModule } from '@angular/fire';
+import { firebaseConfig } from './firebase.config';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -53,8 +62,8 @@ import { PiedraPapelTijeraComponent } from './component/juegos/piedra-papel-tije
     AnagramaComponent,
     LetterBoxComponent,
     PiedraPapelTijeraComponent,
-   
-    
+    LoginComponent,
+    RegistroComponent,    
   ],
   imports: [
     BrowserModule,
@@ -71,6 +80,10 @@ import { PiedraPapelTijeraComponent } from './component/juegos/piedra-papel-tije
     MatListModule,
     DragDropModule,
     MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

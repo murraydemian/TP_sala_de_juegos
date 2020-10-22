@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,13 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  index;
   title = 'salaJuegos';
-
+  activeLink : string;
   links : Array<any> = [
     {route:"/", alias:"Home"},
     {route:"/juegos", alias:"Juegos"},
     {route:"/acerca-de", alias:"Acerca de"}
   ];
-  activeLink = this.links[0].route;
+
+  ngOnInit(){
+    this.index = 1;
+    this.activeLink = this.links[0].route;
+  }
 
 }

@@ -6,6 +6,8 @@ import { JuegosComponent } from './pages/juegos/juegos.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AnagramaComponent } from './component/juegos/anagrama/anagrama.component';
 import { PiedraPapelTijeraComponent } from './component/juegos/piedra-papel-tijera/piedra-papel-tijera.component';
+import { RegistroComponent } from './pages/registro/registro.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,14 @@ const routes: Routes = [
       {path:'tateti', component: AnagramaComponent},
       {path:'adivina', component: AnagramaComponent},
     ],
+  },
+  {
+    path:'login',
+    component: LoginComponent,
+  },
+  {
+    path:'registro',
+    component: RegistroComponent,
   },
   {
     path:'**',

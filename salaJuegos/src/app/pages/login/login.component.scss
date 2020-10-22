@@ -1,0 +1,22 @@
+.form-container{
+    //background: red;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    //grid-template-columns: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.registro-input{
+    width: 50vw;
+    min-width: 380px;
+}
+.registro-button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
+}

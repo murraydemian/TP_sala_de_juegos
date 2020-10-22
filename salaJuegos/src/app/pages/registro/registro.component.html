@@ -1,0 +1,28 @@
+<div class="form-container" *ngIf="showing">
+    <p>
+        <mat-form-field appearance="outline" class="registro-input">
+            <mat-label>Correo</mat-label>
+            <input type="text" matInput placeholder="Correo" [(ngModel)]="correo">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline" class="registro-input">
+            <mat-label>Nombre de usuario</mat-label>
+            <input type="text" matInput placeholder="Nombre de usuario" [(ngModel)]="nombreUsuario">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline" class="registro-input">
+            <mat-label>Clave</mat-label>
+            <input type="password" matInput placeholder="Clave" [(ngModel)]="clave">
+        </mat-form-field>
+    </p>
+    <p>
+        <button mat-raised-button class="registro-button" (click)="registro()">
+            Registrar
+        </button>
+        <button mat-raised-button class="registro-button" (click)="limpiar()">
+            Limpiar
+        </button>
+    </p>
+</div>
