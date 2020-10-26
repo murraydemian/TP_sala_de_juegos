@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class PiedraPapelTijeraComponent implements OnInit {
 
   opciones : Array<any> = [
-    {valor:'piedra', ruta:'../../../../assets/piedra.png', alt:'piedra'},
-    {valor:'papel', ruta:'../../../../assets/papel.png', alt:'papel'},
-    {valor:'tijera', ruta:'../../../../assets/tijera.png', alt:'tijera'}];
+    {valor:'piedra', ruta:'../../../../assets/juegos-ppt-assets-piedra.svg', alt:'piedra'},
+    {valor:'papel', ruta:'../../../../assets/juegos-ppt-assets-papel.svg', alt:'papel'},
+    {valor:'tijera', ruta:'../../../../assets/juegos-ppt-assets-tijera.svg', alt:'tijera'}];
   pensando : any = {valor:'pensando', ruta:'../../../../assets/pensando.png', alt:'pensando'};
   seleccionUsuario : any = this.pensando;
   seleccionOponente : any = this.pensando;

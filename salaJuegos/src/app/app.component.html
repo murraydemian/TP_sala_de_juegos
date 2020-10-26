@@ -1,13 +1,15 @@
 <!--app-nav-bar></app-nav-bar-->
 
 <nav mat-tab-nav-bar backgroundColor="primary" class="nav-bar">
-    <a mat-tab-link routerLink="/">
+    <a mat-tab-link routerLink=""
+        (click)="activeLinkChange('')"
+        [active]="activeLink == ''">
         <img src="../assets/cat_icon.png" alt="cat icon" style="height: 45px; width: 45px; margin-right: 10px;">
         <label class="link-text"> Sala de Juegos</label>
     </a>
     <a mat-tab-link *ngFor="let link of links"
         routerLink="{{link.route}}"
-        (click)="activeLink = link.route"
+        (click)="activeLinkChange(link.route)"
         [active]="activeLink == link.route">
         <label class="link-text">
             {{link.alias}}

@@ -22,7 +22,7 @@
     </mat-drawer-container>
 </mat-sidenav-container-->
 
-<nav mat-tab-nav-bar backgroundColor="light">
+<nav mat-tab-nav-bar backgroundColor="light" class="nav-bar">
     <a mat-tab-link *ngFor="let link of games"
         routerLink="{{link.route}}"
         (click)="activeLink = link.route"
@@ -31,6 +31,6 @@
             {{link.alias}}
         </label>
     </a>
-  </nav>
-  <router-outlet style="display: grid;"></router-outlet>
+</nav>
+<router-outlet></router-outlet>
 

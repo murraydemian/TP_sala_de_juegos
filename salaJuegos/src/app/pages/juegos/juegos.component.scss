@@ -35,3 +35,8 @@
     background-color: transparent !important;
     background: rgba($color: #fff, $alpha: 0)!important;
 }
+.nav-bar{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}

@@ -8,29 +8,38 @@ import { AnagramaComponent } from './component/juegos/anagrama/anagrama.componen
 import { PiedraPapelTijeraComponent } from './component/juegos/piedra-papel-tijera/piedra-papel-tijera.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { LoginGuard } from './guard/login.guard';
+import { TatetiComponent } from './component/juegos/tateti/tateti.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: HomeComponent
   },
   {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    canActivate: [LoginGuard],
     path:'acerca-de',
     component: AcercaDeComponent
   },
   {
+    canActivate: [LoginGuard],
     path:'juegos',
     component: JuegosComponent,
     children: [
       {path:'anagrama', component: AnagramaComponent},
       {path:'piedrapapeltijera', component: PiedraPapelTijeraComponent},
-      {path:'tateti', component: AnagramaComponent},
+      {path:'tateti', component: TatetiComponent},
       {path:'adivina', component: AnagramaComponent},
     ],
   },
   {
     path:'login',
     component: LoginComponent,
+    
   },
   {
     path:'registro',

@@ -40,6 +40,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { AngularFireModule } from '@angular/fire';
 import { firebaseConfig } from './firebase.config';
 import { FormsModule } from '@angular/forms';
+import { TatetiComponent } from './component/juegos/tateti/tateti.component';
 
 
 
@@ -63,7 +64,8 @@ import { FormsModule } from '@angular/forms';
     LetterBoxComponent,
     PiedraPapelTijeraComponent,
     LoginComponent,
-    RegistroComponent,    
+    RegistroComponent,
+    TatetiComponent,    
   ],
   imports: [
     BrowserModule,

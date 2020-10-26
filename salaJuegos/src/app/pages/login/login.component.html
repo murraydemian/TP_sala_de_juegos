@@ -18,5 +18,7 @@
         <button mat-raised-button class="registro-button" (click)="limpiar()">
             Limpiar
         </button>
+        <button mat-raised-button class="registro-button" (click)=loginRapido()><mat-icon>code</mat-icon></button>
     </p>
 </div>
+<mat-card class="toast-card" *ngIf="presentToast">{{toastMessage}}</mat-card>

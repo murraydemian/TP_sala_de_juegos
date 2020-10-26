@@ -1,0 +1,32 @@
+.page-grid{
+    //background: chartreuse;
+    height: 80vh;
+    width: auto;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+.tateti-grid{
+    background: url('../../../../assets/lab4-tp-tatetigrid.svg');
+    display: grid;
+    height: 50vw;
+    width: 50vw;
+    grid-template-columns: 15vw 15vw 15vw;
+    grid-template-rows: 15vw 15vw 15vw;
+    column-gap: 2.5vw;
+    row-gap: 2.5vw;
+}
+.space{
+    //background: white;
+    border-style: none;
+    height: 100%;
+    width: 100%;
+    display: grid;
+}
+.tateti-img{
+    
+    align-self: center;
+    justify-self: center;
+    height: 80%;
+    width: 80%;
+}
