@@ -1,31 +1,43 @@
 <div class="page-grid">
     <div class="tateti-grid">
-        <div class="space" id="space-1">
-            <img src="../../../../assets/lab4-tp-{{space1.img}}.svg" alt="" class="tateti-img">
+        <div (click)="selecciona(0)" class="space" id="space-0">
+            <img src="../../../../assets/lab4-tp-{{espacios[0].img}}.svg" alt="" *ngIf="espacios[0].img" class="tateti-img">
         </div>
-        <div class="space" id="space-2">
-            <img src="../../../../assets/lab4-tp-{{space2.img}}.svg" alt="" class="tateti-img">
+        <div (click)="selecciona(1)" class="space" id="space-1">
+            <img src="../../../../assets/lab4-tp-{{espacios[1].img}}.svg" alt="" *ngIf="espacios[1].img" class="tateti-img">
         </div>
-        <div class="space" id="space-3">
-            <img src="../../../../assets/lab4-tp-{{space3.img}}.svg" alt="" class="tateti-img">
+        <div (click)="selecciona(2)" class="space" id="space-2">
+            <img src="../../../../assets/lab4-tp-{{espacios[2].img}}.svg" alt="" *ngIf="espacios[2].img" class="tateti-img">
         </div>
-        <div class="space" id="space-4">
-            <img src="../../../../assets/lab4-tp-{{space4.img}}.svg" alt="" class="tateti-img">
+        <div (click)="selecciona(3)" class="space" id="space-3">
+            <img src="../../../../assets/lab4-tp-{{espacios[3].img}}.svg" alt="" *ngIf="espacios[3].img" class="tateti-img">
         </div>
-        <div class="space" id="space-5">
-            <img src="../../../../assets/lab4-tp-{{space5.img}}.svg" alt="" class="tateti-img">
+        <div (click)="selecciona(4)" class="space" id="space-4">
+            <img src="../../../../assets/lab4-tp-{{espacios[4].img}}.svg" alt="" *ngIf="espacios[4].img" class="tateti-img">
         </div>
-        <div class="space" id="space-6">
-            <img src="../../../../assets/lab4-tp-{{space6.img}}.svg" alt="" class="tateti-img">
+        <div (click)="selecciona(5)" class="space" id="space-5">
+            <img src="../../../../assets/lab4-tp-{{espacios[5].img}}.svg" alt="" *ngIf="espacios[5].img" class="tateti-img">
         </div>
-        <div class="space" id="space-7">
-            <img src="../../../../assets/lab4-tp-{{space7.img}}.svg" alt="" class="tateti-img">
+        <div (click)="selecciona(6)" class="space" id="space-6">
+            <img src="../../../../assets/lab4-tp-{{espacios[6].img}}.svg" alt="" *ngIf="espacios[6].img" class="tateti-img">
         </div>
-        <div class="space" id="space-8">
-            <img src="../../../../assets/lab4-tp-{{space8.img}}.svg" alt="" class="tateti-img">
+        <div (click)="selecciona(7)" class="space" id="space-7">
+            <img src="../../../../assets/lab4-tp-{{espacios[7].img}}.svg" alt="" *ngIf="espacios[7].img" class="tateti-img">
         </div>
-        <div class="space" id="space-9">
-            <img src="../../../../assets/lab4-tp-{{space9.img}}.svg" alt="" class="tateti-img">
-        </div>
+        <div (click)="selecciona(8)" class="space" id="space-8">
+            <img src="../../../../assets/lab4-tp-{{espacios[8].img}}.svg" alt="" *ngIf="espacios[8].img" class="tateti-img">
+        </div>        
+    </div>
+    <div class="resultado-div" [style.opacity]="resultado.fin ? 1 : 0">
+        <mat-card class="mensaje-card"  *ngIf="mensaje">
+            <mat-card-title>{{mensaje}}</mat-card-title>
+        </mat-card>
+        <button mat-fab 
+        class="redo-button" 
+        color="primary"  
+        *ngIf="mensaje"
+        (click)="reiniciar()">
+            <mat-icon>loop</mat-icon>
+        </button>
     </div>
 </div>

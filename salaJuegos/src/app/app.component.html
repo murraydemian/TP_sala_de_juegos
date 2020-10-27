@@ -15,7 +15,9 @@
             {{link.alias}}
         </label>
     </a>
-    <button mat-stroked-button class="login-button link-text" routerLink="login">Iniciar Sesión</button>
+    <button mat-stroked-button class="login-button link-text" routerLink="login" *ngIf="!sesion && !procesando">Iniciar Sesión</button>
+    <button mat-stroked-button *ngIf="procesando"><mat-spinner color="accent" class="login-spinner" diameter="40"></mat-spinner></button>
+    <button mat-stroked-button class="login-button link-text" (click)="cerrarSesion()" *ngIf="sesion && !procesando">Cerrar Sesión</button>
     <button mat-stroked-button class="login-button link-text" routerLink="registro">Registrarse</button>
 </nav>
 <router-outlet></router-outlet>

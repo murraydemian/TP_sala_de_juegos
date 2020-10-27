@@ -17,6 +17,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { LayoutModule } from '@angular/cdk/layout';
 import { RouteButtonComponent } from './component/atom/route-button/route-button.component';
@@ -41,6 +42,7 @@ import { AngularFireModule } from '@angular/fire';
 import { firebaseConfig } from './firebase.config';
 import { FormsModule } from '@angular/forms';
 import { TatetiComponent } from './component/juegos/tateti/tateti.component';
+import { AdivinaComponent } from './component/juegos/adivina/adivina.component';
 
 
 
@@ -65,7 +67,8 @@ import { TatetiComponent } from './component/juegos/tateti/tateti.component';
     PiedraPapelTijeraComponent,
     LoginComponent,
     RegistroComponent,
-    TatetiComponent,    
+    TatetiComponent,
+    AdivinaComponent,    
   ],
   imports: [
     BrowserModule,
@@ -85,9 +88,10 @@ import { TatetiComponent } from './component/juegos/tateti/tateti.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatProgressSpinnerModule,
     AngularFireModule.initializeApp(firebaseConfig),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

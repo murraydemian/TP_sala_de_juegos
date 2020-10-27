@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { SesionService } from '../../service/sesion.service';
+import { AppComponent } from '../../app.component';
 
 
 @Component({
@@ -21,24 +22,28 @@ export class LoginComponent implements OnInit {
   showing : boolean = false;
 
   constructor(
-    private fire : AngularFirestore,
-    private auth : AngularFireAuth,
-    private router : Router,
-    private sesion : SesionService,
+    private fire: AngularFirestore,
+    private auth: AngularFireAuth,
+    private router: Router,
+    private sesion: SesionService,
+    private app: AppComponent,
   ) { }
 
   ngOnInit(): void {
     this.showing = true;
   }
   login(){
+    this.app.procesando = true;
     this.sesion.Start(this.correo, this.clave)
     .then( (response) => {
       console.log(this.router.url );
-      this.router.navigate(['/home']);
+      this.app.navegarHome();
+      this.app.verificarSesion();
     })
     .catch( (reason) => {
-      console.log(reason);
+      //console.log(reason);
       this.presentToast = true;
+      this.app.procesando = false;
     });
   }
   loginRapido(){

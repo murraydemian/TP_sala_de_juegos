@@ -1,5 +1,7 @@
 .page-grid{
     //background: chartreuse;
+    padding-top: 20px;
+    min-height: 500px;
     height: 80vh;
     width: auto;
     display: grid;
@@ -9,24 +11,40 @@
 .tateti-grid{
     background: url('../../../../assets/lab4-tp-tatetigrid.svg');
     display: grid;
-    height: 50vw;
-    width: 50vw;
-    grid-template-columns: 15vw 15vw 15vw;
-    grid-template-rows: 15vw 15vw 15vw;
-    column-gap: 2.5vw;
-    row-gap: 2.5vw;
+    min-height: 400px;
+    min-width: 400px;
+    max-height: 90%;
+    max-width: 90%;
+    height: 50vh;
+    width: 50vh;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 30% 30% 30%;
+    column-gap: 5%;
+    row-gap: 5%;
 }
 .space{
-    //background: white;
+    //background: red;
     border-style: none;
     height: 100%;
     width: 100%;
     display: grid;
 }
 .tateti-img{
-    
+    border-image: none;
     align-self: center;
     justify-self: center;
     height: 80%;
     width: 80%;
+}
+.mensaje-card{
+    display: flex;
+    justify-content: center;
+}
+.resultado-div{
+    //background: chartreuse;
+    display: flex;
+    flex-direction: column;
+}
+.redo-button{
+    align-self: center;
 }

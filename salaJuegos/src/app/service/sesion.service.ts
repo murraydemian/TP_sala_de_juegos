@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase';
+import { first } from 'rxjs/operators';
 import { SesionStartResponse } from '../interface/sesionStartResponse.interface';
 
 @Injectable({
@@ -10,10 +11,26 @@ export class SesionService {
 
   private sesionUid : string;
   private sesionStarted : boolean;
+  private user;
 
   constructor(
     private auth: AngularFireAuth
   ) { }
+
+  ngOnInit(){    
+    this.auth.authState.pipe(first()).toPromise()
+    .then(user => {
+      this.sesionStarted = false;
+      if (user != null){
+        this.user = user;
+        this.sesionStarted = true;
+      }
+    })
+    .catch( () => {
+      this.user = null;
+      this.sesionStarted = false;
+    });    
+  }
 
   /**
    * 
@@ -55,6 +72,8 @@ export class SesionService {
     return this.sesionUid == uidString;
   }
 
+
+
   End(){
     let sesionEndResponse : SesionStartResponse = {ok: false, reason: '', data: null};
     return new Promise( (resolve, rejected) => {
@@ -72,6 +91,25 @@ export class SesionService {
         rejected(sesionEndResponse);
       });
     });
+  }
+
+  Started(){
+    return new Promise((resolve, rejected) => {
+      this.auth.authState.pipe(first()).toPromise()
+      .then(user => {
+        this.user = user;
+        this.sesionStarted = false;
+        if (user != null){
+          this.sesionStarted = true;
+        }
+        resolve(this.sesionStarted);
+      })
+      .catch(error => rejected(false));
+    });
+  }
+
+  HasUser(){
+    return this.user != null;
   }
 
   Register(){

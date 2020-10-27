@@ -18,12 +18,14 @@ export class LoginGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      return true;
-    if(this.sesion.Verify()){
-      return true;
-    }else{
-      this.router.navigate(['login']);
-      return false;
+    if(!this.sesion.HasUser()){
+      this.sesion.Started().then( (sesionStarted) => {
+        return sesionStarted;
+      }).catch( () => {
+        return false;
+      });
+    } else {
+      return this.sesion.Verify();
     }
   }
   

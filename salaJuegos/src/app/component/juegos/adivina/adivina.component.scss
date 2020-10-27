@@ -1,0 +1,53 @@
+.page-grid{
+    //background: chartreuse;
+    height: 80vh;
+    width: auto;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+.dificultad-button-flex{
+    display: flex;
+    flex-direction: column;
+}
+.dificultad-button{
+    width: 60%;
+    padding: 5%;
+    margin: 10px;
+    align-self: center;
+}
+.juego-div{
+    min-width: 400px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+}
+.mensaje-card{
+    display: flex;
+    justify-content: center;
+}
+.buttons-div{
+    grid-row: span 3;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    
+}
+.timer-card{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    //justify-items: center;
+    align-items: center;
+}
+button{
+    padding: 5px;
+}
+.adivinar-button{
+    width: 100%;
+}
+.penalty-label{
+    color: red;
+}
+.guiar-icon{
+    font-size: 200%;
+    color: green;
+}

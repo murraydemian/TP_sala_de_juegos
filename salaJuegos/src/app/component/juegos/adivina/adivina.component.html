@@ -1,0 +1,63 @@
+<div class="page-grid">
+    <div class="dificultad-div" *ngIf="!(dificultad)">
+        <mat-card>
+            <mat-card-title>Seleccione una dificultad</mat-card-title>
+        </mat-card>
+        <div class="dificultad-button-flex">
+            <button mat-raised-button 
+                class="dificultad-button" 
+                color="primary"
+                (click)="seleccionaDificultad('facil')">Facil</button>
+            <button mat-raised-button 
+                class="dificultad-button" 
+                color="primary"
+                (click)="seleccionaDificultad('medio')">Medio</button>
+            <button mat-raised-button 
+                class="dificultad-button" 
+                color="primary"
+                (click)="seleccionaDificultad('dificil')">Dificil</button>
+        </div>
+    </div>
+    <div class="juego-div" *ngIf="dificultad">
+        <mat-card class="mensaje-card">{{mensaje}}</mat-card>
+        <button mat-raised-button color="primary" class="adivinar-button" (click)="empezar()">EMPEZAR</button>
+        <div class="timer-div">
+            <mat-card class="timer-card">
+                <mat-card-title>
+                    <mat-icon>timer</mat-icon>
+                    {{tiempo}}
+                </mat-card-title>
+                <mat-card-title>
+                    <mat-label class="penalty-label" *ngIf='sancion'>+3s</mat-label>
+                </mat-card-title>
+            </mat-card>
+        </div>
+        <div class="numero-div">
+            <mat-card class="timer-card">
+                <mat-card-title>
+                    {{eleccion}}
+                </mat-card-title>                
+                <mat-card-title>
+                    <mat-label>
+                        <mat-icon class="guiar-icon" *ngIf='guia'>{{guia}}</mat-icon>
+                    </mat-label>
+                </mat-card-title>
+            </mat-card>
+        </div>
+        <div class="buttons-div">
+            <button mat-raised-button color="primary" (click)="sumar(1)" [disabled]="!empezo">
+                <mat-icon>arrow_upward</mat-icon>
+            </button>
+            <button mat-raised-button color="primary" (click)="sumar(5)" [disabled]="!empezo">+5</button>
+            <button mat-raised-button color="primary" (click)="sumar(10)" [disabled]="!empezo">+10</button>
+            <button mat-raised-button color="primary" (click)="sumar(-1)" [disabled]="!empezo">
+                <mat-icon>arrow_downward</mat-icon>
+            </button>
+            <button mat-raised-button color="primary" (click)="sumar(-5)" [disabled]="!empezo">-5</button>
+            <button mat-raised-button color="primary" (click)="sumar(-10)" [disabled]="!empezo">-10</button>
+        </div>
+        <div class="adivina-div">
+            <button mat-raised-button color="primary" class="adivinar-button" [disabled]="!empezo" (click)="adivinar()">ADIVINAR</button>
+        </div>
+    </div>
+</div>

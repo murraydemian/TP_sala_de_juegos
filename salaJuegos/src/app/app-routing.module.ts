@@ -10,11 +10,12 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginGuard } from './guard/login.guard';
 import { TatetiComponent } from './component/juegos/tateti/tateti.component';
+import { AdivinaComponent } from './component/juegos/adivina/adivina.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'home',
@@ -30,10 +31,10 @@ const routes: Routes = [
     path:'juegos',
     component: JuegosComponent,
     children: [
-      {path:'anagrama', component: AnagramaComponent},
-      {path:'piedrapapeltijera', component: PiedraPapelTijeraComponent},
-      {path:'tateti', component: TatetiComponent},
-      {path:'adivina', component: AnagramaComponent},
+      {path:'anagrama', component: AnagramaComponent, canActivate: [LoginGuard]},
+      {path:'piedrapapeltijera', component: PiedraPapelTijeraComponent, canActivate: [LoginGuard]},
+      {path:'tateti', component: TatetiComponent, canActivate: [LoginGuard]},
+      {path:'adivina', component: AdivinaComponent, canActivate: [LoginGuard]},
     ],
   },
   {
@@ -47,7 +48,7 @@ const routes: Routes = [
   },
   {
     path:'**',
-    component: NotFoundComponent
+    component: NotFoundComponent,
   }
 ];
 
