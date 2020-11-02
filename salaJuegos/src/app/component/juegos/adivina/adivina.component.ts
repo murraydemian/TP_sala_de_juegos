@@ -45,8 +45,7 @@ export class AdivinaComponent implements OnInit {
   empezarTimer(){
     this.timer = setInterval(() => {
       this.delta = this.fecha - Date.now();
-      this.minutos = Math.abs(Math.floor( ( this.delta / 1000 ) / 60 ) ) - 1;
-      this.minutos = this.minutos < 10 ? '0' + <string>this.minutos : (<string>this.minutos);
+      this.minutos = (Math.abs(Math.floor( ( this.delta / 1000 ) / 60 ) ) - 1) < 10 ? '0' + <string>this.minutos : (<string>this.minutos);
       this.segundos = Math.abs(this.delta/1000) % 60;
       this.segundosString = this.segundos < 10 ? ('0' + <string>this.segundos).substr(0,6) : (this.segundos + '').substr(0, 6);      
       this.tiempo = this.minutos + ' : ' + this.segundosString;      
