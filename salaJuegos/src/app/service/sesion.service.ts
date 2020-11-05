@@ -1,8 +1,10 @@
 import { Injectable, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { auth } from 'firebase';
 import { first } from 'rxjs/operators';
 import { SesionStartResponse } from '../interface/sesionStartResponse.interface';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +13,13 @@ export class SesionService {
 
   private sesionUid : string;
   private sesionStarted : boolean;
-  private user;
+  public user;
+  public userFireInfo;
+  public userEmail;
 
   constructor(
-    private auth: AngularFireAuth
+    private auth: AngularFireAuth,
+    private fire: AngularFirestore,
   ) { }
 
   ngOnInit(){    
@@ -22,8 +27,12 @@ export class SesionService {
     .then(user => {
       this.sesionStarted = false;
       if (user != null){
+        
+        this.userEmail = user.email;
         this.user = user;
         this.sesionStarted = true;
+        this.getUserFireInfo(user);
+        console.log(user.email);
       }
     })
     .catch( () => {
@@ -49,6 +58,8 @@ export class SesionService {
         sesionStartResponse.data = authResponse.user.uid;
         this.sesionUid = authResponse.user.uid;
         this.sesionStarted = true;
+        this.userEmail = email;
+        this.getUserFireInfo({email: email});
         resolve(sesionStartResponse);
       })
       .catch( (authReason) => {
@@ -83,6 +94,8 @@ export class SesionService {
         this.sesionStarted = false;
         sesionEndResponse.data = signOutResponse;
         sesionEndResponse.ok = true;
+        this.userFireInfo = null;
+        this.userEmail = null;
         resolve(sesionEndResponse);
       })
       .catch( (signOutReason) => {
@@ -97,6 +110,7 @@ export class SesionService {
     return new Promise((resolve, rejected) => {
       this.auth.authState.pipe(first()).toPromise()
       .then(user => {
+        this.getUserFireInfo(user);
         this.user = user;
         this.sesionStarted = false;
         if (user != null){
@@ -110,6 +124,30 @@ export class SesionService {
 
   HasUser(){
     return this.user != null;
+  }
+
+  async getUserFireInfo(user: any){
+    let collection = this.fire.collection('userinfo').get();
+    await collection.subscribe( obs => {
+      obs.docs.map( (doc) => {
+        if(this.user.email == doc.data().correo){
+          this.userFireInfo = doc;
+        }
+      });
+    });
+      
+    
+  }
+
+  async updateFireInfo(data){
+    this.fire.collection('userinfo').doc(this.userFireInfo.id)
+      .set(data).then( foo => {
+        this.refreshFireInfo();
+      });
+  }
+
+  refreshFireInfo(){
+    this.getUserFireInfo(this.user);
   }
 
   Register(){

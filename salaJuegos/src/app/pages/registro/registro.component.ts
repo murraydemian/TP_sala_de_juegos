@@ -28,7 +28,19 @@ export class RegistroComponent implements OnInit {
 
   registro(){
     this.auth.createUserWithEmailAndPassword(this.correo, this.clave).then( foo => {
-      let user = {correo: this.correo, username: this.nombreUsuario};
+      let user = {
+        correo: this.correo, 
+        username: this.nombreUsuario,
+        adivina_dificil_tiempos: [],
+        adivina_facil_tiempos: [],
+        adivina_medio_tiempos: [],
+        anagrama_partidas: 0,
+        anagrama_victorias: 0,
+        ppt_partidas: 0,
+        ppt_victorias: 0,
+        tateti_partidas: 0,
+        tateti_victorias: 0,
+      };
       this.fire.collection('userinfo').add(user).then( foo2 => {
         this.router.navigate(['/login']);
       });

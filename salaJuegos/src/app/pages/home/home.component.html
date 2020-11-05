@@ -1,4 +1,34 @@
-<div class=""></div>
+<div class="home-page" *ngIf="userData">
+    <mat-card class="stats-card">
+        <mat-card-header>
+            <mat-card-title>Anagrama</mat-card-title>
+        </mat-card-header>
+        <p>Partidas {{userData.anagrama_partidas}}</p>
+        <p>Partidas {{userData.anagrama_victorias}}</p>
+    </mat-card>
+    <mat-card class="stats-card">
+        <mat-card-header>
+            <mat-card-title>Adivina el Numero</mat-card-title>
+        </mat-card-header>
+        <p>Ultimo tiempo en facil {{ultimoFacil}}</p>
+        <p>Ultimo tiempo en medio {{ultimoMedio}}</p>
+        <p>Ultimo tiempo en dificil {{ultimoDificil}}</p>
+    </mat-card>
+    <mat-card class="stats-card">
+        <mat-card-header>
+            <mat-card-title>Piedra Papel Tijera</mat-card-title>
+            <p>Partidas {{userData.anagrama_partidas}}</p>
+            <p>Partidas {{userData.anagrama_victorias}}</p>
+        </mat-card-header>
+    </mat-card>
+    <mat-card class="stats-card">
+        <mat-card-header>
+            <mat-card-title>TaTeTi</mat-card-title>
+            <p>Partidas {{userData.tateti_partidas}}</p>
+            <p>Partidas {{userData.tateti_victorias}}</p>
+        </mat-card-header>
+    </mat-card>
+</div>
 
 
 <!--mat-card class="home-card">

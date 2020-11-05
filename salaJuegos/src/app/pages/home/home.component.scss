@@ -1,13 +1,13 @@
-/*.home-card{
-    height: 400px;
-    width: 400px;
-    left: center;
-    top: center;
-    background: url('../../../assets/jome.png');
-    background-size: cover;
-    background-color: rgba($color: #FFFFFF, $alpha: 0.8);
-    margin: 100px  auto;
+.home-page{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 5%;
+    .stats-card{
+        width: 80%;
+        justify-self: center;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+    }
 }
-body{
-   
-}*/ 

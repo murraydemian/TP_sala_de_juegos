@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SesionService } from 'src/app/service/sesion.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-tateti',
@@ -21,7 +23,10 @@ export class TatetiComponent implements OnInit {
     {img: '', foo:'octava'},
     {img: '', foo:'novena'}];
     
-    constructor() { }
+  constructor(
+    private sesion: SesionService,
+    private fire: AngularFirestore,
+    ) { }
 
   ngOnInit(): void {
   }
@@ -36,13 +41,17 @@ export class TatetiComponent implements OnInit {
         this.oponenteSelecciona();
       }
       if(this.resultado.fin){
+        let data = this.sesion.userFireInfo.data();
+        data.tateti_partidas++;
         if(this.resultado.ganador == 'tic'){
+          data.tateti_victorias++;
           this.mensaje = 'Ganaste!';
         } else if (this.resultado.ganador == 'tac'){
           this.mensaje = 'Perdiste :(';
         } else {
           this.mensaje = 'Empate.';
         }
+        this.sesion.updateFireInfo(data);
       }
     }
   }

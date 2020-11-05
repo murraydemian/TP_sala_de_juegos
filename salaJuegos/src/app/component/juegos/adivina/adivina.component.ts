@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SesionService } from 'src/app/service/sesion.service';
 
 @Component({
   selector: 'app-adivina',
@@ -24,11 +25,14 @@ export class AdivinaComponent implements OnInit {
   public mensaje : string = '';
   public guia : string;
   public jugo: boolean = false;
+  private userData: any = null;
 
-  constructor() { }
+  constructor(
+    private sesion: SesionService,
+  ) { }
 
   ngOnInit(): void { 
-        
+    this.userData = this.sesion.userFireInfo.data();
   }
   empezar(){
     if(!this.jugo){
@@ -45,7 +49,8 @@ export class AdivinaComponent implements OnInit {
   empezarTimer(){
     this.timer = setInterval(() => {
       this.delta = this.fecha - Date.now();
-      this.minutos = (Math.abs(Math.floor( ( this.delta / 1000 ) / 60 ) ) - 1) < 10 ? '0' + <string>this.minutos : (<string>this.minutos);
+      this.minutos = Math.abs(Math.floor( ( this.delta / 1000 ) / 60 ) ) - 1;
+      this.minutos = this.minutos < 10 ? ('0' + <string>this.minutos) : this.minutos + '';
       this.segundos = Math.abs(this.delta/1000) % 60;
       this.segundosString = this.segundos < 10 ? ('0' + <string>this.segundos).substr(0,6) : (this.segundos + '').substr(0, 6);      
       this.tiempo = this.minutos + ' : ' + this.segundosString;      
@@ -82,6 +87,18 @@ export class AdivinaComponent implements OnInit {
       this.guia = 'check';
       this.jugo = true;
       this.empezo = false;
+      switch(this.dificultad){
+        case 'facil':
+          this.userData.adivina_facil_tiempos.push(this.tiempo);
+        break;
+        case 'medio':
+          this.userData.adivina_medio_tiempos.push(this.tiempo);
+        break;
+        case 'dificil':
+          this.userData.adivina_dificil_tiempos.push(this.tiempo);
+        break;
+      }
+      this.sesion.updateFireInfo(this.userData);
     } else {
       this.sancionar();
       if(this.eleccion < this.numero){

@@ -1,5 +1,6 @@
 import { HtmlTagDefinition } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { SesionService } from 'src/app/service/sesion.service';
 
 @Component({
   selector: 'app-juegos',
@@ -16,9 +17,12 @@ export class JuegosComponent implements OnInit {
   ];
   display : string = '';
 
-  constructor() { }
+  constructor(
+    private sesion: SesionService,
+  ) { }
 
   ngOnInit(): void {
+    
   }
   seleccionaJuego(juego : string){
     this.display = juego;

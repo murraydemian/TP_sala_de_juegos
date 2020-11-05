@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { SesionService } from './service/sesion.service';
+import { UserService } from './service/user.service';
 
 export const routes : Array<any> = [
   {route:"/home", alias:"Home"},

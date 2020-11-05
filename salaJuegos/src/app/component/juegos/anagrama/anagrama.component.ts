@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { SesionService } from 'src/app/service/sesion.service';
 
 @Component({
   selector: 'app-anagrama',
@@ -16,8 +17,12 @@ export class AnagramaComponent implements OnInit {
   icon : any = {};
   letterWidth = 62;
   boxWidth : string = '';
+  data: any = null;
+  jugo: boolean = false;
 
-  constructor() { }
+  constructor(
+    private sesion: SesionService,
+  ) { }
 
   ngOnInit(): void {
     this.solucion = [];
@@ -27,6 +32,9 @@ export class AnagramaComponent implements OnInit {
     this.frs = this.prepareFrs();
     this.palabraDesordenada = this.shuffle(this.palabra);
     this.boxWidth = (this.letterWidth * this.palabra.length) + 'px';
+    this.data = this.sesion.userFireInfo.data();
+    this.data.anagrama_partidas++;
+    this.sesion.updateFireInfo(this.data);
   }
   getRandomInt(max : number) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -56,12 +64,17 @@ export class AnagramaComponent implements OnInit {
                         event.previousIndex,
                         event.currentIndex);
     }
-    if(this.checkAnswer()){
-      this.icon.name = 'check';
-      this.icon.color = 'green';
-    }else{
-      this.icon.name = 'clear';
-      this.icon.color = 'red';
+    if(!this.jugo){
+      if(this.checkAnswer()){
+        this.jugo = true;
+        this.icon.name = 'check';
+        this.icon.color = 'green';
+        this.data.anagrama_victorias++;
+        this.sesion.updateFireInfo(this.data);
+      }else{
+        this.icon.name = 'clear';
+        this.icon.color = 'red';
+      }
     }
   }
   shuffle(a : Array<string>) {
@@ -94,6 +107,7 @@ export class AnagramaComponent implements OnInit {
     return ok;
   }
   redo(){
+    this.jugo = false;
     this.ngOnInit();
   }
 }
