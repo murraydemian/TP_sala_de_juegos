@@ -16,7 +16,7 @@ export class UserService {
   ) { }
 
   ngOnInit(){
-    this.getUserInfo();
+    //this.getUserInfo();
   }
 
   getUserInfo(){

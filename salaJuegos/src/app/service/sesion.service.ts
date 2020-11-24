@@ -32,7 +32,7 @@ export class SesionService {
         this.user = user;
         this.sesionStarted = true;
         this.getUserFireInfo(user);
-        console.log(user.email);
+        //console.log(user.email);
       }
     })
     .catch( () => {
@@ -127,16 +127,16 @@ export class SesionService {
   }
 
   async getUserFireInfo(user: any){
-    let collection = this.fire.collection('userinfo').get();
-    await collection.subscribe( obs => {
-      obs.docs.map( (doc) => {
-        if(this.user.email == doc.data().correo){
-          this.userFireInfo = doc;
-        }
+    if(user != null){
+      let collection = this.fire.collection('userinfo').get();
+      await collection.subscribe( obs => {
+        obs.docs.map( (doc) => {
+          if(user.email == doc.data().correo){
+            this.userFireInfo = doc;
+          }
+        });
       });
-    });
-      
-    
+    }    
   }
 
   async updateFireInfo(data){

@@ -1,0 +1,136 @@
+@import '~@angular/material/theming';
+.juego-container{
+    background: mat-color($mat-grey, 200);
+    width: 50%;
+    min-width: 400px;
+    min-height: 500px;
+    border-radius: 25px;
+    padding: 25px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+
+    .selector-dificultad{
+        display: flex;
+        flex-direction: column;
+
+        .dificultad-titulo{
+            background: mat-color($mat-grey, 100);
+            padding: 15px;
+            font-size: x-large;
+            font-weight: 500;
+            border-radius: 15px;
+            border: solid 2px black;
+        }
+
+        .dificultad-button{
+            margin-top: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: large;
+        }
+    }
+
+    .juego{
+        display: flex;
+        flex-direction: column;
+
+        .timer{
+            user-select: none;
+            display: flex;
+            align-items: center;            
+            min-width: 350px;
+            overflow: hidden;
+            background: mat-color($mat-grey, 100);
+            padding:  15px;
+            font-size: x-large;
+            font-weight: 500;
+            border-radius: 15px;
+
+            .sancion{
+                animation: mostar-ocultar 1s;
+                color: mat-color($mat-red, 500);
+                float: right;
+            }
+        }
+        .operacion{
+            user-select: none;
+            display: flex;
+            justify-content: space-evenly;
+            min-width: 350px;
+            padding: 15px;
+            font-size: xx-large;
+            border-radius: 15px;
+            background: mat-color($mat-grey, 100);
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        .respuesta{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            min-width: 350px;
+            font-size: x-large;
+            border-radius: 15px;
+            font-weight: 500;
+            background: mat-color($mat-grey, 100);
+            padding: 15px;
+            margin-top: 15px;
+
+            .respuesta-input{
+                border-style: solid;
+                border-top-color: mat-color($mat-grey, 200);
+                border-bottom-color: mat-color($mat-grey, 200);
+                border-left-color: mat-color($mat-grey, 200);
+                border-right-color: mat-color($mat-grey, 200);
+                border-width: 2px;
+                padding: 15px;
+                font-size: large;
+                font-weight: 500;
+                border-radius: 15px;
+                text-align: center;
+            }
+        }
+        .resultado{
+            user-select: none;
+            display: flex;
+            justify-content: space-evenly;
+            min-width: 350px;
+            padding: 15px;
+            font-size: xx-large;
+            border-radius: 15px;
+            background: mat-color($mat-grey, 100);
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        .empezar{
+            margin-top: 15px;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            .empezar-button{
+                margin-bottom: 15px;
+                font-size: large;
+                padding: 15px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@keyframes mostrar-ocultar{
+    from{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

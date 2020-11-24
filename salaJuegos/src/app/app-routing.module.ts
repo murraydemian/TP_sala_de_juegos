@@ -11,6 +11,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { LoginGuard } from './guard/login.guard';
 import { TatetiComponent } from './component/juegos/tateti/tateti.component';
 import { AdivinaComponent } from './component/juegos/adivina/adivina.component';
+import { AgilidadComponent } from './component/juegos/agilidad/agilidad.component';
+import { MemotestComponent } from './component/juegos/memotest/memotest.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,8 @@ const routes: Routes = [
       {path:'piedrapapeltijera', component: PiedraPapelTijeraComponent, canActivate: [LoginGuard]},
       {path:'tateti', component: TatetiComponent, canActivate: [LoginGuard]},
       {path:'adivina', component: AdivinaComponent, canActivate: [LoginGuard]},
+      {path:'agilidad', component: AgilidadComponent, canActivate: [LoginGuard]},
+      {path:'memotest', component: MemotestComponent, canActivate: [LoginGuard]},
     ],
   },
   {

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -43,6 +44,8 @@ import { firebaseConfig } from './firebase.config';
 import { FormsModule } from '@angular/forms';
 import { TatetiComponent } from './component/juegos/tateti/tateti.component';
 import { AdivinaComponent } from './component/juegos/adivina/adivina.component';
+import { AgilidadComponent } from './component/juegos/agilidad/agilidad.component';
+import { MemotestComponent } from './component/juegos/memotest/memotest.component';
 
 
 
@@ -68,10 +71,13 @@ import { AdivinaComponent } from './component/juegos/adivina/adivina.component';
     LoginComponent,
     RegistroComponent,
     TatetiComponent,
-    AdivinaComponent,    
+    AdivinaComponent,
+    AgilidadComponent,
+    MemotestComponent,    
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,

@@ -13,7 +13,9 @@ export class JuegosComponent implements OnInit {
     {alias:"Anagrama", route:"anagrama"},
     {alias:"Piedra Papel Tijera", route:"piedrapapeltijera"},
     {alias:"TaTeTi", route:"tateti"},
-    {alias:"Adivina el Numero", route:"adivina"}
+    {alias:"Adivina el Numero", route:"adivina"},
+    {alias:"Agilidad aritmetica", route:"agilidad"},
+    {alias:"Memotest", route:"memotest"},
   ];
   display : string = '';
 

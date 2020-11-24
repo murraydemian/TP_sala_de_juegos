@@ -1,32 +1,44 @@
 <div class="home-page" *ngIf="userData">
     <mat-card class="stats-card">
-        <mat-card-header>
-            <mat-card-title>Anagrama</mat-card-title>
+        <mat-card-header class="stats-header">
+            <mat-card-title class="stats-nombre-juego">Anagrama</mat-card-title>
         </mat-card-header>
-        <p>Partidas {{userData.anagrama_partidas}}</p>
-        <p>Partidas {{userData.anagrama_victorias}}</p>
+        <p class="stats-nombre">Partidas jugadas: </p>
+        <p class="stats-valor">{{userData.anagrama_partidas}}</p>
+
+        <p class="stats-nombre">Victorias: </p>
+        <p class="stats-valor">{{userData.anagrama_victorias}}</p>
     </mat-card>
     <mat-card class="stats-card">
-        <mat-card-header>
-            <mat-card-title>Adivina el Numero</mat-card-title>
+        <mat-card-header class="stats-header">
+            <mat-card-title class="stats-nombre-juego">Adivina el Numero</mat-card-title>
         </mat-card-header>
-        <p>Ultimo tiempo en facil {{ultimoFacil}}</p>
-        <p>Ultimo tiempo en medio {{ultimoMedio}}</p>
-        <p>Ultimo tiempo en dificil {{ultimoDificil}}</p>
+        <p class="stats-nombre">Ultimo tiempo en facil: </p>
+        <p class="stats-valor">{{ultimoFacil}}</p>
+        <p class="stats-nombre">Ultimo tiempo en medio: </p>
+        <p class="stats-valor">{{ultimoMedio}}</p>
+        <p class="stats-nombre">Ultimo tiempo en dificil: </p>
+        <p class="stats-valor">{{ultimoDificil}}</p>
     </mat-card>
     <mat-card class="stats-card">
-        <mat-card-header>
-            <mat-card-title>Piedra Papel Tijera</mat-card-title>
-            <p>Partidas {{userData.anagrama_partidas}}</p>
-            <p>Partidas {{userData.anagrama_victorias}}</p>
+        <mat-card-header class="stats-header">
+            <mat-card-title class="stats-nombre-juego">Piedra Papel Tijera</mat-card-title>
         </mat-card-header>
+            <p class="stats-nombre">Partidas jugadas: </p>
+            <p class="stats-valor">{{userData.anagrama_partidas}}</p>
+
+            <p class="stats-nombre">Victorias: </p>
+            <p class="stats-valor">{{userData.anagrama_victorias}}</p>
     </mat-card>
     <mat-card class="stats-card">
-        <mat-card-header>
-            <mat-card-title>TaTeTi</mat-card-title>
-            <p>Partidas {{userData.tateti_partidas}}</p>
-            <p>Partidas {{userData.tateti_victorias}}</p>
+        <mat-card-header class="stats-header">
+            <mat-card-title class="stats-nombre-juego">TaTeTi</mat-card-title>
         </mat-card-header>
+            <p class="stats-nombre">Partidas jugadas: </p>
+            <p class="stats-valor">{{userData.tateti_partidas}}</p>
+
+            <p class="stats-nombre">Victorias: </p>
+            <p class="stats-valor">{{userData.tateti_victorias}}</p>
     </mat-card>
 </div>
 

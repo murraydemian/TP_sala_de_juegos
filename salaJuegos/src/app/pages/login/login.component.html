@@ -1,24 +1,26 @@
 <div class="form-container" *ngIf="showing">
-    <p>
-        <mat-form-field appearance="outline" class="registro-input">
-            <mat-label>Correo</mat-label>
-            <input type="text" matInput placeholder="Correo" [(ngModel)]="correo">
-        </mat-form-field>
-    </p>
-    <p>
-        <mat-form-field appearance="outline" class="registro-input">
-            <mat-label>Clave</mat-label>
-            <input type="password" matInput placeholder="Clave" [(ngModel)]="clave">
-        </mat-form-field>
-    </p>
-    <p>
-        <button mat-raised-button class="registro-button" (click)="login()">
-            Iniciar sesión
-        </button>
-        <button mat-raised-button class="registro-button" (click)="limpiar()">
-            Limpiar
-        </button>
-        <button mat-raised-button class="registro-button" (click)=loginRapido()><mat-icon>code</mat-icon></button>
-    </p>
+    <form [formGroup]="loginForm">
+        <p>
+            <mat-form-field appearance="outline" class="registro-input">
+                <mat-label>Correo</mat-label>
+                <input type="text" matInput placeholder="Correo" formControlName="email" [color]="correoValido ? 'primary' : 'warn'">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline" class="registro-input">
+                <mat-label>Clave</mat-label>
+                <input type="password" matInput placeholder="Clave" formControlName="pass" [color]="claveValida ? 'primary' : 'warn'">
+            </mat-form-field>
+        </p>
+        <p>
+            <button mat-raised-button class="registro-button" (click)="login()">
+                Iniciar sesión
+            </button>
+            <button mat-raised-button class="registro-button" (click)="limpiar()">
+                Limpiar
+            </button>
+            <button mat-raised-button class="registro-button" (click)=loginRapido()><mat-icon>code</mat-icon></button>
+        </p>
+    </form>
 </div>
 <mat-card class="toast-card" *ngIf="presentToast">{{toastMessage}}</mat-card>

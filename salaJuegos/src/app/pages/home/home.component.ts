@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    //console.log(this.sesion.userFireInfo);
     if(!this.sesion.userFireInfo){
       setTimeout(()=>{this.ngOnInit()},1000);
     }else{
@@ -34,6 +35,7 @@ export class HomeComponent implements OnInit {
       this.ultimoFacil = this.userData.adivina_facil_tiempos[this.userData.adivina_facil_tiempos.length -1];
       this.ultimoMedio = this.userData.adivina_medio_tiempos[this.userData.adivina_medio_tiempos.length -1];
       this.ultimoDificil = this.userData.adivina_dificil_tiempos[this.userData.adivina_dificil_tiempos.length -1];
+      console.log(this.userData);
     }
   }
 

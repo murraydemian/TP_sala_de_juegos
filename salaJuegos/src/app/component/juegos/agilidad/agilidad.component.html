@@ -1,0 +1,100 @@
+<div class="juego-container">
+
+    <div class="selector-dificultad" *ngIf="dificultad == null">
+        <p 
+        class="dificultad-titulo">
+            Seleccione alguna dificultad
+        </p>
+
+        <button 
+        mat-raised-button
+        color="primary"
+        expand="block" 
+        class="dificultad-button"
+        (click)="seleccionaDificultad('facil')">
+            Facil
+        </button>
+        <button 
+        mat-raised-button
+        color="primary"
+        expand="block" 
+        class="dificultad-button"
+        (click)="seleccionaDificultad('medio')">
+            Medio
+        </button>
+        <button 
+        mat-raised-button
+        color="primary"
+        expand="block" 
+        class="dificultad-button"
+        (click)="seleccionaDificultad('dificil')">
+            Dificil
+        </button>
+    </div>
+
+    <div class="juego" *ngIf="dificultad != null">
+
+        <div class="timer">
+            <mat-icon>timer</mat-icon>
+            <p>{{tiempo}}</p>
+            <mat-label 
+            class="sancion"
+            *ngIf="sancion">
+                +3
+            </mat-label>
+        </div>
+
+        <div class="operacion">
+            <mat-label>{{primerNumero}}</mat-label>
+            <mat-label>{{operador}}</mat-label>
+            <mat-label>{{segundoNumero}}</mat-label>
+        </div>
+
+        <div class="respuesta">
+            <mat-label>Su respuesta</mat-label>
+            <input 
+            type="number" 
+            class="respuesta-input"
+            [(ngModel)]="respuesta">
+        </div>
+
+        <div class="resultado">
+            <mat-label
+            [style.color]="color">
+                {{mensaje}}
+            </mat-label>
+        </div>
+
+        <div class="empezar">
+            <button
+            mat-raised-button
+            color="primary"
+            expand="block"
+            class="empezar-button"
+            *ngIf="!empezo"
+            (click)="empezar()">
+                Empezar
+            </button>
+            <button
+            mat-raised-button
+            color="primary"
+            expand="block"
+            class="empezar-button"
+            *ngIf="!empezo"
+            (click)="seleccionaDificultad()">
+                Elegir dificultad
+            </button>
+            <button
+            mat-raised-button
+            color="primary"
+            expand="block"
+            class="empezar-button"
+            *ngIf="empezo"
+            (click)="resolver()">
+                Resolver
+            </button>
+        </div>
+
+    </div>
+
+</div>

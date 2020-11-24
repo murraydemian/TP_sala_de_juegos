@@ -1,0 +1,95 @@
+<div class="memotest-container">
+
+    <div class="selector-dificultad" *ngIf="dificultad == null">
+        <p 
+        class="dificultad-titulo">
+            Seleccione alguna dificultad
+        </p>
+
+        <button 
+        mat-raised-button
+        color="primary"
+        expand="block" 
+        class="dificultad-button"
+        (click)="seleccionaDificultad('facil')">
+            Facil
+        </button>
+        <button 
+        mat-raised-button
+        color="primary"
+        expand="block" 
+        class="dificultad-button"
+        (click)="seleccionaDificultad('medio')">
+            Medio
+        </button>
+        <button 
+        mat-raised-button
+        color="primary"
+        expand="block" 
+        class="dificultad-button"
+        (click)="seleccionaDificultad('dificil')">
+            Dificil
+        </button>
+    </div>
+
+    <div class="juego" *ngIf="dificultad != null">
+
+        <div 
+        *ngFor="let carta of cartas; index as i"
+        [class]="carta.clase"
+        (click)="voltear(i)">
+            <img 
+            [src]="carta.mostrar ? carta.imagen : carta.back"
+            class="carta-imagen"
+            alt="carta">
+        </div>
+
+        <div 
+        class="botones"
+        *ngIf="!empezo && dificultad != null">
+            <button 
+            mat-raised-button
+            class="memotest-boton"
+            color="primary"
+            (click)="empezar()">
+                Empezar
+            </button>
+        </div>
+
+        <div 
+        class="mensaje"
+        *ngIf="mensaje && dificultad">
+            <p
+            class="mensaje-p"
+            [style.color]="colorMensaje">
+                {{mensaje}}
+            </p>
+        </div>
+
+        <div 
+        class="timer"
+        *ngIf="empezo && dificultad">
+            <mat-icon>timer</mat-icon>
+            <p>{{tiempo}}</p>
+            <mat-label 
+            class="sancion"
+            *ngIf="sancion">
+                +3
+            </mat-label>
+        </div>
+
+        <div 
+        class="botones"
+        *ngIf="!empezo && dificultad != null">
+            <button 
+            mat-raised-button
+            class="memotest-boton"
+            color="primary"
+            (click)="cambiarDificultad()">
+                Cambiar dificultad
+            </button>
+        </div>
+
+    </div>
+    
+</div>
