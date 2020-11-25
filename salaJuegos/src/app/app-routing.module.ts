@@ -13,6 +13,7 @@ import { TatetiComponent } from './component/juegos/tateti/tateti.component';
 import { AdivinaComponent } from './component/juegos/adivina/adivina.component';
 import { AgilidadComponent } from './component/juegos/agilidad/agilidad.component';
 import { MemotestComponent } from './component/juegos/memotest/memotest.component';
+import { ClickerComponent } from './component/juegos/clicker/clicker.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ const routes: Routes = [
       {path:'adivina', component: AdivinaComponent, canActivate: [LoginGuard]},
       {path:'agilidad', component: AgilidadComponent, canActivate: [LoginGuard]},
       {path:'memotest', component: MemotestComponent, canActivate: [LoginGuard]},
+      {path:'clicker', component: ClickerComponent, canActivate: [LoginGuard]},
     ],
   },
   {

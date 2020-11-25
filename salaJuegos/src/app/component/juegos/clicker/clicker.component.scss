@@ -1,0 +1,52 @@
+@import '~@angular/material/theming';
+.clicker-container{
+    align-self: center;
+    justify-self: center;
+    background: mat-color($mat-grey, 200);
+    width: 50%;
+    min-width: 400px;
+    min-height: 500px;
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .mensaje{
+        user-select: none;
+        background: mat-color($mat-grey, 50);
+        min-width: 350px;
+        padding: 15px;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        font-size: large;
+    }
+
+    .clicker{
+        //background: mat-color($mat-grey, 50);
+        min-width: 350px;
+        border-radius: 15px;
+        min-height: 350px;
+        margin-bottom: 15px;
+        display: grid;
+
+        .clicks{
+            user-select: none;
+            align-self: center;
+            justify-self: center;
+            padding: 15px;
+            background-color: mat-color($mat-grey, 50);
+            font-size: large;
+            font-weight: 800;
+            border-radius: 10px;
+        }
+    }
+
+    .boton{
+        padding: 15px;
+    }
+}

@@ -46,6 +46,8 @@ import { TatetiComponent } from './component/juegos/tateti/tateti.component';
 import { AdivinaComponent } from './component/juegos/adivina/adivina.component';
 import { AgilidadComponent } from './component/juegos/agilidad/agilidad.component';
 import { MemotestComponent } from './component/juegos/memotest/memotest.component';
+import { ClickerComponent } from './component/juegos/clicker/clicker.component';
+import { EstadisticaComponent } from './component/estadistica/estadistica.component';
 
 
 
@@ -73,7 +75,9 @@ import { MemotestComponent } from './component/juegos/memotest/memotest.componen
     TatetiComponent,
     AdivinaComponent,
     AgilidadComponent,
-    MemotestComponent,    
+    MemotestComponent,
+    ClickerComponent,
+    EstadisticaComponent,    
   ],
   imports: [
     BrowserModule,

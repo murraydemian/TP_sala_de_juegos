@@ -16,6 +16,7 @@ export class JuegosComponent implements OnInit {
     {alias:"Adivina el Numero", route:"adivina"},
     {alias:"Agilidad aritmetica", route:"agilidad"},
     {alias:"Memotest", route:"memotest"},
+    {alias:"Clicker", route:"clicker"},
   ];
   display : string = '';
 

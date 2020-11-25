@@ -1,0 +1,35 @@
+<div class="clicker-container">
+
+    <div 
+    class="mensaje"
+    *ngIf="!empezo">
+        <p>{{mensaje}}</p>
+    </div>
+
+    <div 
+    class="mensaje"
+    *ngIf="empezo">
+        <mat-icon>timer</mat-icon>
+        <p>{{tiempo}}</p>
+    </div>
+
+    <div 
+    class="clicker"
+    [style.background-color]="color"
+    (click)="contar()">
+        <mat-label
+        *ngIf="true"
+        class="clicks">
+            {{clicks}}
+        </mat-label>
+    </div>
+
+    <button
+    mat-raised-button
+    class="boton"
+    color="primary"
+    (click)="empezar()">
+        Empezar
+    </button>
+
+</div>
