@@ -32,7 +32,7 @@ export class SesionService {
         this.user = user;
         this.sesionStarted = true;
         this.getUserFireInfo(user);
-        //console.log(user.email);
+
       }
     })
     .catch( () => {

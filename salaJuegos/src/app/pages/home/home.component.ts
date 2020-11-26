@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    //console.log(this.sesion.userFireInfo);
     if(!this.sesion.userFireInfo){
       setTimeout(()=>{this.ngOnInit()},1000);
     }else{
@@ -41,7 +40,6 @@ export class HomeComponent implements OnInit {
     this.estadisticasAgilidad = this.prepararAgilidad();
     this.estadisticasMemotest = this.prepararMemotest();
     this.estadisticasClicker = this.prepararClicker();
-    console.log(this.estadisticasAdivina, this.estadisticasAgilidad, this.estadisticasMemotest);
   }
 
   prepararAnagrama(): Array<{nombre:string, valor:any}> | boolean {

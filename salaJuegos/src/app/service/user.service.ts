@@ -26,7 +26,7 @@ export class UserService {
         if(collectionDocs[i].correo = this.sesion.userEmail){
           this.user = collectionDocs[i];
           this.infoReady = true;
-          console.log(this.user);
+
           break;
         }
       }

@@ -48,12 +48,12 @@ export class LoginComponent implements OnInit {
     this.app.procesando = true;
     this.sesion.Start(this.correo.value, this.clave.value)
     .then( (response) => {
-      console.log(this.router.url );
+
       this.app.navegarHome();
       this.app.verificarSesion();
     })
     .catch( (reason) => {
-      //console.log(reason);
+
       this.presentToast = true;
       this.app.procesando = false;
     });
@@ -69,10 +69,10 @@ export class LoginComponent implements OnInit {
   }
   correoChanged(data){
     this.correoValido = this.correo.status == "VALID";
-    console.log(this.correoValido);
+
   }
   claveChanged(data){
     this.claveValida = this.clave.value.length >= 6;
-    console.log(this.claveValida);
+
   }
 }
