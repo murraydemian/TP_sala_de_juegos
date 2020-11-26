@@ -14,6 +14,7 @@ import { AdivinaComponent } from './component/juegos/adivina/adivina.component';
 import { AgilidadComponent } from './component/juegos/agilidad/agilidad.component';
 import { MemotestComponent } from './component/juegos/memotest/memotest.component';
 import { ClickerComponent } from './component/juegos/clicker/clicker.component';
+import { EstadisticaComponent } from './component/estadistica/estadistica.component';
 
 const routes: Routes = [
   {

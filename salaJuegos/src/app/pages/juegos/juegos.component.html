@@ -1,26 +1,3 @@
-<!--mat-sidenav-container class="sidenav-cont">
-    <mat-drawer-container class="drawer-cont">
-        <mat-drawer mode="side" opened class="juegos-sidenav">
-            <app-side-button (click)="seleccionaJuego('anagrama')" label="Anagrama"></app-side-button>
-            <app-side-button (click)="seleccionaJuego('piedra-papel-tijera')" label="Piedra Papel Tijera"> </app-side-button>
-            <app-side-button (click)="seleccionaJuego('')" label="Agilidad"></app-side-button>
-            <app-side-button (click)="seleccionaJuego('')" label="Adivina"></app-side-button>
-            <app-side-button (click)="seleccionaJuego('')" label="TaTeTi"></app-side-button>
-            <app-side-button (click)="seleccionaJuego('')" label="Memotest"></app-side-button>
-            <app-side-button (click)="seleccionaJuego('')" label="Juego"></app-side-button>
-        </mat-drawer>
-        <mat-drawer-content class="juegos-content">
-            <mat-card class="juegos-card">
-                <div id="comp-render" *ngIf="display == 'anagrama'">
-                    <app-anagrama></app-anagrama>
-                </div>
-                <div id="comp-render" *ngIf="display == 'piedra-papel-tijera'">
-                    <app-piedra-papel-tijera></app-piedra-papel-tijera>
-                </div>
-            </mat-card>
-        </mat-drawer-content>
-    </mat-drawer-container>
-</mat-sidenav-container-->
 
 <nav mat-tab-nav-bar backgroundColor="light" class="nav-bar">
     <a mat-tab-link *ngFor="let link of games"

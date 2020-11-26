@@ -1,14 +1,32 @@
-.form-container{
-    //background: red;
-    position: fixed;
+@import '~@angular/material/theming';
+.page-container{
     height: 100vh;
     width: 100vw;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.form-container{
+    background-color: mat-color($mat-grey, 100);
+    position: fixed;
+    height: fit-content;
+    width: fit-content;
     min-width: 400px;
+    padding: 20px;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
+    //border-style: solid;
+    //border-width: 3px;
+    //border-color: mat-color($mat-deep-purple, 600);
     //grid-template-columns: 100vw;
     justify-content: center;
     align-items: center;
+}
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .registro-input{
     width: 50vw;

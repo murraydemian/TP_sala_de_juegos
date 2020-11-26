@@ -1,8 +1,18 @@
-.form-container{
-    //background: red;
-    position: fixed;
-    height: 100vh;
+@import '~@angular/material/theming';
+.page-container{
     width: 100vw;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.form-container{
+    background-color: mat-color($mat-grey, 100);
+    position: fixed;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 15px;
     min-width: 400px;
     display: flex;
     flex-direction: column;
@@ -10,10 +20,17 @@
     justify-content: center;
     align-items: center;
 }
+.botones{
+    display: flex;
+}
 .registro-input{
     width: 50vw;
     min-width: 380px;
 }
 .registro-button{
-    width: 50%;
+    width: 100%;
+    padding: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: large;
 }

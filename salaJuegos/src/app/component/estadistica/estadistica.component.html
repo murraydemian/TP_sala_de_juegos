@@ -1,1 +1,23 @@
+<div 
+class="estadisticas-container"
+*ngIf="juego">
 
+    <p
+    class="nombre-juego">
+        {{juego}}
+    </p>
+
+    <div 
+    class="estadistica"
+    *ngFor="let item of estadisticas">
+        <mat-label
+        class="item-nombre">
+            {{item.nombre}}
+        </mat-label>
+        <p
+        class="item-valor">
+            {{item.valor}}
+        </p>
+    </div>
+
+</div>

@@ -1,4 +1,54 @@
-<div class="home-page" *ngIf="userData">
+<div class="home-page" *ngIf="listo">
+
+    <div class="superflex1">
+        <div class="flex1">
+            <app-estadistica
+            juego='Anagrama'
+            [estadisticas]='estadisticasAnagrama'>
+        </app-estadistica>
+        
+        <app-estadistica
+        juego='Piedra Papel Tijera'
+        [estadisticas]='estadisticasPPT'>
+        </app-estadistica>
+        </div>
+
+        <div class="flex2">    
+            <app-estadistica
+            juego='TaTeTi'
+            [estadisticas]='estadisticasTaTeTi'>
+        </app-estadistica>
+
+        <app-estadistica
+        juego='Adivina el numero'
+        [estadisticas]='estadisticasAdivina'>
+        </app-estadistica>
+        </div>
+    </div>
+    <div class="superflex2">
+        <div class="flex3">
+            <app-estadistica
+            juego='Agilidad aritmetica'
+            [estadisticas]='estadisticasAgilidad'>
+            </app-estadistica>
+
+            <app-estadistica
+            juego='Memotest'
+            [estadisticas]='estadisticasMemotest'>
+            </app-estadistica>
+        </div>
+
+        <div class="flex4">
+            <app-estadistica
+            juego='Clicker'
+            [estadisticas]='estadisticasClicker'>
+            </app-estadistica>
+        </div>
+    </div>
+</div>
+
+
+<!--mat-card class="home-card">
     <mat-card class="stats-card">
         <mat-card-header class="stats-header">
             <mat-card-title class="stats-nombre-juego">Anagrama</mat-card-title>
@@ -40,9 +90,4 @@
             <p class="stats-nombre">Victorias: </p>
             <p class="stats-valor">{{userData.tateti_victorias}}</p>
     </mat-card>
-</div>
-
-
-<!--mat-card class="home-card">
-    
 </mat-card-->

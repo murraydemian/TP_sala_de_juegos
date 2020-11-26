@@ -1,11 +1,17 @@
+@import '~@angular/material/theming';
 .page-container{
   //background: red;
   display: flex;
-  height: 75vh;
-  width: 100vw;
+  height: fit-content;
+  width: fit-content;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
   align-content: center;
   justify-content: center;
   flex-direction: column;
+  align-self: center;
+  background-color: mat-color($mat-grey, 200);
   //grid-template-columns: 100vw;
   //background: red;
 }

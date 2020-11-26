@@ -1,0 +1,37 @@
+@import '~@angular/material/theming';
+.estadisticas-container{
+    display:            flex;
+    flex-direction:     column;
+    border-style:       solid;
+    border-width:       2px;
+    border-color:       mat-color($mat-grey, 200);
+    background-color:   mat-color($mat-grey, 200);
+    border-radius:      15px;
+    padding:            15px;
+    margin:             5px;
+    //width:              fit-content;
+    width:              80%;
+    .nombre-juego{
+        padding:            15px;
+        background-color:   mat-color($mat-deep-purple, 500);
+        color:            white;
+        border-radius:      15px;
+        font-size:          x-large;
+        font-weight:        bold;
+    }
+    .estadistica{
+        border-bottom-style:    solid;
+        border-bottom-width:    2px;
+        border-bottom-color:    mat-color($mat-grey, 200);
+        margin:                 15px;
+        .item-nombre{
+            font-size:      large;
+            margin-left:    10px;
+        }
+        .item-valor{
+            font-size:      large;
+            font-weight:    bold;
+            text-align:     center;
+        }
+    }
+}

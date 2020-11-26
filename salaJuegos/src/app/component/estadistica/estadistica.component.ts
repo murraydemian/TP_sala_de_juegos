@@ -7,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class EstadisticaComponent implements OnInit {
 
-  @Input() tipo : string;
+  @Input() juego : string;
+  @Input() estadisticas: Array<{nombre: string, valor: any}>;
 
   constructor() { }
 

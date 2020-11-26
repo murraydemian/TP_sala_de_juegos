@@ -1,6 +1,9 @@
+@import '~@angular/material/theming';
 .page-grid{
-    //background: chartreuse;
-    padding-top: 20px;
+    background-color: mat-color($mat-grey, 200);
+    border-radius: 15px;
+    margin: 20px;
+    padding: 20px;
     min-height: 500px;
     height: 80vh;
     width: auto;

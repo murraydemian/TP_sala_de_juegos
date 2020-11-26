@@ -72,6 +72,7 @@ export class MemotestComponent implements OnInit {
   }
 
   seleccionaDificultad(dif: string = null){
+    this.mensaje = '';
     this.dificultad = dif;
     this.cartas = [];
     switch(dif){
@@ -123,7 +124,7 @@ export class MemotestComponent implements OnInit {
     }
   }
 
-  voltear(index){
+  async voltear(index){
     if(this.volteadas < 2 && !this.animando){
       if(!this.cartas[index].volteada){
         this.aRevisar.push(index);
@@ -134,7 +135,7 @@ export class MemotestComponent implements OnInit {
         if(this.volteadas == 2){
           setTimeout( () => {
             this.revisar();
-          }, 1100);
+          }, 1000);
         }
       }
     }
